@@ -29,8 +29,8 @@ module Hallon
     #
     # @param [Float] offset offset into track in seconds
     # @return [Hallon::Link]
-    def to_link(offset = offset)
-      _to_link((offset * 1000).to_i)
+    def to_link(off = offset)
+      _to_link((off * 1000).to_i)
     end
 
     # Offset into track in seconds this track was created with.

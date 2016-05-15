@@ -54,8 +54,8 @@ module Hallon
     # @see #length
     # @param [Fixnum] length truncate to this size
     # @return [String] spotify URI representation of this Link.
-    def to_str(length = length)
-      FFI::Buffer.alloc_out(length + 1) do |b|
+    def to_str(len = length)
+      FFI::Buffer.alloc_out(len + 1) do |b|
         Spotify.link_as_string(pointer, b, b.size)
         return b.get_string(0).force_encoding("UTF-8")
       end
