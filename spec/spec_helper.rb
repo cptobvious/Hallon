@@ -36,9 +36,9 @@ RSpec.configure do |config|
     File.expand_path('../fixtures/pink_cover.jpg', __FILE__)
   end
 
-  def create_session(valid_appkey = true, options = options)
+  def create_session(valid_appkey = true, opt = options)
     appkey = valid_appkey ? 'appkey_good' : 'appkey_bad'
-    Hallon::Session.send(:new, appkey, options)
+    Hallon::Session.send(:new, appkey, opt)
   end
 
   def instantiate(klass, *pointers)
